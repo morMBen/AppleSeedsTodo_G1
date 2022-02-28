@@ -3,7 +3,8 @@ import cors from 'cors';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import { corsConfig } from './config';
-import Routes from './routes/routes';
+import UserRoutes from './routes/user.routes';
+import ProjectRoutes from './routes/project.routes';
 
 const app: Express = express();
 
@@ -13,7 +14,8 @@ app.use(helmet());
 app.use(express.json({}));
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/api/users', Routes);
+app.use('/api/users', UserRoutes);
+app.use('/api/users', ProjectRoutes);
 
 app.use('*', ((err, req, res, next) => {
   res.status(500).send('Server Error');
