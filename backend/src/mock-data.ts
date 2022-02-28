@@ -1,31 +1,31 @@
 // user: {
-//   _id: String
-//   name: String
-//   email: String
-//   password: String
+//   _id: string
+//   name: string
+//   email: string
+//   password: string
 //   projects: ref[]
 //   createdAt: Date
 //   updatedAt: Date
 // }
 
 interface Task {
-  _id: String
-  // project: String
-  title: String
-  description: String
-  urgency: Number
-  isActive: Boolean
-  label: String
+  _id: string
+  // project: string
+  title: string
+  description: string
+  urgency: number // 1-not urgent ... urgent
+  isActive: boolean
+  label: string
   createdAt: Date
   updatedAt: Date
 }
 
 interface Project {
-  _id: String
+  _id: string
   // user: ref
-  title: String
-  description: String
-  goal: String
+  title: string
+  description: string
+  goal: string
   tasks: Task[]
   createdAt: Date
   updatedAt: Date
@@ -64,9 +64,9 @@ const task3: Task = {
   updatedAt: new Date,
 }
 
-const project: Project = {
+const project1: Project = {
   _id: "123a",
-  title: "Appleseeds Todo1",
+  title: "Appleseeds Todo 1",
   description: "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
   goal: "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.",
   tasks: [task1, task2, task3],
@@ -74,4 +74,16 @@ const project: Project = {
   updatedAt: new Date,
 }
 
-export default project;
+const project2: Project = {
+  _id: "456b",
+  title: "Appleseeds Todo 2",
+  description: "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+  goal: "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.",
+  tasks: [task1, task2, task3],
+  createdAt: new Date,
+  updatedAt: new Date,
+}
+
+const projects: Project[] = [project1, project2];
+
+export default projects;

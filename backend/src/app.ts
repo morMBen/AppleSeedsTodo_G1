@@ -15,7 +15,7 @@ app.use(express.json({}));
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/api/users', UserRoutes);
-app.use('/api/users', ProjectRoutes);
+app.use('/api/projects', ProjectRoutes);
 
 app.use('*', ((err, req, res, next) => {
   res.status(500).send('Server Error');
