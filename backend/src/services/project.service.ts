@@ -13,4 +13,6 @@ export async function getAllProjectsDetailsService() {
   })
 }
 
-
+export async function getProjectByIdService(projectId: string) {
+  return mockProjects.find((project) => project._id === projectId);
+}

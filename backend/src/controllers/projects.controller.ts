@@ -7,22 +7,3 @@ export async function getAllProjectsDetailsHandler(req: Request, res: Response) 
   return res.send(projects);
 }
 
-// export async function updateTaskProgressHandler(
-//   // req: Request, res: Response
-//   req: Request<UpdateProjectInput['params']>,
-//   res: Response,
-// ) {
-//   const { projectId } = req.params;
-//   const project = await findProjectService({ projectId });
-//   if (!project) {
-//     return res.sendStatus(404);
-//   }
-//   const { progress } = req.body;
-//   const updatedTask = await updateTaskProgressService()
-// }
-
-// ) {
-
-
-// return res.send(project);
-// }

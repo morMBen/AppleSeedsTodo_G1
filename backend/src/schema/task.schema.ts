@@ -9,7 +9,7 @@ const payload = {
     }),
     description: string({
       required_error: "Description is required",
-    }), //.min(120, "Description should be at least 120 characters long!"),
+    }),
     isActive: boolean({
       required_error: "isActive flag is required",
     }),
@@ -24,6 +24,9 @@ const payload = {
 
 const params = {
   params: object({
+    projectId: string({
+      required_error: "Project Id is required",
+    }),
     taskId: string({
       required_error: "Task Id is required",
     }),
