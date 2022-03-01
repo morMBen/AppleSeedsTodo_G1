@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { UpdateTaskInput } from '../schema/task.schema';
 import { getProjectByIdService } from '../services/project.service'
-import { getTasksByProjectService } from '../services/task.service';
+import {  } from '../services/task.service';
 
 export async function getTasksByProjectHandler(
   req: Request<UpdateTaskInput['params']>,
@@ -10,10 +10,9 @@ export async function getTasksByProjectHandler(
   const { projectId } = req.params;
   const project = await getProjectByIdService(projectId);
   if (!project) {
-    return res.sendStatus(404);
+    res.status(404).send("Project not found");
+    return;
   }
-
-  // const tasks = await getTasksByProjectService(project);
 
   return res.send(project.tasks);
 }

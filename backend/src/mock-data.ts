@@ -8,7 +8,7 @@
 //   updatedAt: Date
 // }
 
-interface Task {
+export interface Task {
   _id: string
   // project: string
   title: string
@@ -20,7 +20,7 @@ interface Task {
   updatedAt: Date
 }
 
-interface Project {
+export interface Project {
   _id: string
   // user: ref
   title: string

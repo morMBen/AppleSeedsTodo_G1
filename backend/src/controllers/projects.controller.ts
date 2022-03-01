@@ -7,3 +7,6 @@ export async function getAllProjectsDetailsHandler(req: Request, res: Response) 
   return res.send(projects);
 }
 
+export async function createNewProjectHandler() {
+  
+}
