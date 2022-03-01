@@ -1,3 +1,5 @@
-const taskConstants = { add: 'ADD_TASK' };
+const Constants = { add: 'ADD_TASK' , Remove: 'REMOVE_TASK' };
 
-export default taskConstants;
+
+export default Constants;
+
