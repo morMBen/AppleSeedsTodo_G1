@@ -30,19 +30,19 @@ const params = {
   }),
 };
 
-export const createProductSchema = object({
+export const createTaskSchema = object({
   ...payload,
 });
 
-export const findProductSchema = object({
+export const findTaskSchema = object({
   ...params,
 });
 
-export const updateProductSchema = object({
+export const updateTaskSchema = object({
   ...payload,
   ...params,
 });
 
-export type CreateProductInput = TypeOf<typeof createProductSchema>
-export type FindProductInput = TypeOf<typeof findProductSchema>
-export type UpdateProductInput = TypeOf<typeof updateProductSchema>
+export type CreateTaskInput = TypeOf<typeof createTaskSchema>
+export type FindTaskInput = TypeOf<typeof findTaskSchema>
+export type UpdateTaskInput = TypeOf<typeof updateTaskSchema>
