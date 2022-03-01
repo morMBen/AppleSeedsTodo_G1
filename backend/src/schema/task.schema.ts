@@ -29,7 +29,7 @@ const params = {
     }),
     taskId: string({
       required_error: "Task Id is required",
-    }),
+    }).optional(),
   }),
 };
 

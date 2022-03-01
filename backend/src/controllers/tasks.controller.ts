@@ -13,9 +13,9 @@ export async function getTasksByProjectHandler(
     return res.sendStatus(404);
   }
 
-  const tasks = await getTasksByProjectService(project);
+  // const tasks = await getTasksByProjectService(project);
 
-  return res.send(tasks);
+  return res.send(project.tasks);
 }
 
 

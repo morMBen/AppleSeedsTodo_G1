@@ -2,7 +2,7 @@ import express, { Request, Response } from "express";
 import validateResource from "../middlewere/validateResource";
 import { 
   getTasksByProjectHandler,
-  updateTaskProgressHandler,
+  // updateTaskProgressHandler,
 } from "../controllers/tasks.controller";
 import { 
   findTaskSchema, 
@@ -16,7 +16,7 @@ Router.get('/healthcheck', (req: Request, res: Response): void => {
 });
 
 Router.get(
-  '/get-tasks-by-project', 
+  '/get-tasks-by-project/:projectId', 
   // validateResource(findTaskSchema),
   getTasksByProjectHandler,
 );
