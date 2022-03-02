@@ -12,4 +12,8 @@ router.use('/users', UserRoutes);
 router.use('/projects', ProjectRoutes);
 router.use('/tasks', TaskRoutes);
 
+// router.use('*', ((err, req, res, next) => {
+//   res.status(404).send('Page Not Found');
+// }) as express.ErrorRequestHandler);
+
 export default router;

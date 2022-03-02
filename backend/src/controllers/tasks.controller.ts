@@ -6,10 +6,7 @@ import {  } from '../services/task.service';
 export async function createNewTaskHandler(
   req: Request<CreateTaskInput['params']>,
   res: Response
-) {
-  console.log(req.params);
-  console.log(req.body);
-  
+) {  
   const { projectId } = req.params;
   const newTask = req.body;
   const project = await getProjectByIdService(projectId);
