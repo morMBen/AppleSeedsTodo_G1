@@ -3,7 +3,7 @@ import { AnyZodObject } from "zod";
 
 const validate = (schema: AnyZodObject) => {
   console.log("middlewere");
-  try {
+  // try {
     return (req: Request, res: Response, next: NextFunction) => {
       
       try {
@@ -15,13 +15,13 @@ const validate = (schema: AnyZodObject) => {
         next();
       } catch (error: any) {
         res.status(400).send(error.errors);
-        throw "";
+        // throw "";
       }
     };
     
-  } catch (error) {
-    throw error
-  }
+  // } catch (error) {
+  //   throw error
+  // }
 };
 
 export default validate;

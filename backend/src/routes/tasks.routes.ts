@@ -19,7 +19,7 @@ Router.get('/healthcheck', (req: Request, res: Response): void => {
 
 Router.post(
   '/create-new-task/:projectId',
-  validateResource(createTaskSchema),
+  // validateResource(createTaskSchema),
   createNewTaskHandler,
 );
 
