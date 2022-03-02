@@ -6,6 +6,7 @@ export const addTask = (note: string): Action => ({
   type: 'ADD_TASK',
   payload: note,
 });
+
 export const removeTask = (note: string): Action => ({
   type: 'REMOVE_TASK',
   payload: note,

@@ -3,8 +3,9 @@ import { store } from './store';
 
 export interface TasksState {
   tasks: string[];
+
 }
-const intialState = { tasks: [] };
+const intialState = { tasks :["hila"] };
 
 const initialProjectState = { isActive : false};
 
