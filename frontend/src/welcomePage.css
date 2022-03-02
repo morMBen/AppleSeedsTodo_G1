@@ -1,0 +1,50 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.spinner {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border-top: 4px solid orange;
+  border-right: 4px solid transparent;
+  animation: rotate 1s linear infinite;
+  padding: 10px;
+}
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.welcome-page {
+  min-height: 90vh;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  gap: 0.35rem;
+  margin: 3%;
+  border-radius: 2rem;
+  /* overflow: scroll; */
+}
+.project-card {
+  height: 29.125rem;
+  width: 37.75rem;
+  /* height: 466px;
+  width: 604px; */
+  display: inline-flex;
+  flex-direction: column;
+  margin: 1%;
+  background: white;
+  border-radius: 1rem;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+h1 {
+  display: block;
+  color: white;
+  padding-top: 5vh;
+}
