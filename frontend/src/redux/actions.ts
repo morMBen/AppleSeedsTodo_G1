@@ -1,30 +1,15 @@
-// export type Action = { type: 'ADD_TASK' | "REMOVE_TASK", 
-//  payload: string };
+export type Action = { type: 'ADD_TASK' | "REMOVE_TASK", 
+ payload: string };
  
-// export const addTask = (note: string): Action => ({
-//   type: 'ADD_TASK',
-//   payload: note,
-// });
-// export const removeTask = (note: string): Action => ({
-//   type: 'REMOVE_TASK',
-//   payload: note,
-// });
 
-interface ADD_TASK{
+export const addTask = (note: string): Action => ({
   type: 'ADD_TASK',
-  payload: string
-}
-interface REMOVE_TASK{
+  payload: note,
+});
+export const removeTask = (note: string): Action => ({
   type: 'REMOVE_TASK',
-  payload: string
-}
- export type Action = ADD_TASK | REMOVE_TASK
-
-
-
-
-
-
+  payload: note,
+});
 
 
 // const addTodoAction = {

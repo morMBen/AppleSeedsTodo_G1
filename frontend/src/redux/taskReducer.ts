@@ -6,9 +6,7 @@ export interface TasksState {
 }
 const intialState = { tasks: [] };
 
-export interface projectReducer {
-  id: string;
-}
+const initialProjectState = { isActive : false};
 
 
 export const tasksReducer = (state: TasksState = intialState, action: Action) => {
@@ -16,28 +14,25 @@ export const tasksReducer = (state: TasksState = intialState, action: Action) =>
     case 'ADD_TASK': {
       return { ...state, tasks: [...state.tasks, action.payload] };
     }
-    case 'REMOVE_TASK': {
-      return { ...state, tasks: [...state.tasks, action.payload] };
-    }
+    // case 'REMOVE_TASK': {
+    //   return { ...state, tasks: [...state.tasks, action.payload] };
+    // }
     default: {
       return state;
     }
   }
 };
 
-export const projectReducer = (state: TasksState = intialState, action: Action) => {
-  switch (action.type) {
-    case 'ADD_TASK': {
-      return { ...state, tasks: [...state.tasks, action.payload] };
-    }
-    case 'REMOVE_TASK': {
-      return { ...state, tasks: [...state.tasks, action.payload] };
-    }
-    default: {
-      return state;
-    }
-  }
-};
+// export const projectReducer = (state: projectReducer = initialProjectState, action: Action) => {
+//   switch (action.type) {
+//     case 'False': {
+//       return { ...state, tasks: [...state., action.payload] };
+//     }
+//     default: {
+//       return state;
+//     }
+//   }
+// };
 
 
 
