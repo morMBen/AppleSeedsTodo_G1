@@ -12,7 +12,7 @@ const Navbar = () => {
             <i className='fa fa-play'></i>
           </li>
           <li className='navbar-item'>About</li>
-          {/* <li className='navbar-item'>Projects</li> */}
+          <li className='navbar-item'>Projects</li>
         </div>
         <div className='nav-right'>
           <li className='navbar-item logo'>LOGO</li>

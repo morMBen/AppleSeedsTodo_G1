@@ -22,45 +22,31 @@ i {
   background-color: var(--color-dark);
   color: var(--color-light);
   position: fixed;
+  display: flex;
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
   height: 5rem;
   width: 100vw;
-  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2%;
+  line-height: 3.5rem;
 }
 
 .navbar-item {
   list-style: none;
-  flex: 2;
-  padding: 1%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor:pointer;
+  align-self: center;
 }
 
 .nav-left {
-  display: flex;
-  justify-content: flex-start;
-  gap: 2em;
-}
-
-.nav-right {
-  display: flex;
-  justify-content: flex-start;
-  width: 10%;
+    display: flex;
+    gap: 2em;
 }
 
 .logo {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 4rem;
-    right:0;
-    top:0;
-    flex: 3;
+    padding: 1%;
 }
