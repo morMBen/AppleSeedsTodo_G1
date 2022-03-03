@@ -6,7 +6,7 @@ const Navbar = () => {
     <>
       <ul className='navbar'>
         <div className='nav-left'>
-          <li className='navbar-item'>
+          <li className='navbar-item select'>
             {/* <Link></Link> */}
             SelectP
             <i className='fa fa-play'></i>

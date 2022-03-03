@@ -7,14 +7,18 @@
     font-size: 16px;
 }
 
+body{
+    /* background-color: yellow; */
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-i {
-  margin-left: 0.7rem;
+.fa{
+    /* border: 1px solid red; */
+    margin-left: 0.7rem;
 }
 
 .navbar {
@@ -22,6 +26,7 @@ i {
   background-color: var(--color-dark);
   color: var(--color-light);
   position: fixed;
+  top:0;
   display: flex;
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
@@ -35,7 +40,7 @@ i {
 
 .navbar-item {
   list-style: none;
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
   cursor:pointer;
