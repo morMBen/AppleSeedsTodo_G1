@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Welcomepage from './Welcomepage';
-import BackLog from './BackLog';
+import Welcomepage from './components/welcomePage/Welcomepage';
+import BackLog from './components/backLog/BackLog';
 import Board from './Board';
 import About from './About';
 import { useDispatch, useSelector } from 'react-redux';
@@ -24,7 +24,6 @@ function App() {
         </div>
       </BrowserRouter>
       <Navbar></Navbar>
-      <Welcomepage />
     </div>
   );
 }

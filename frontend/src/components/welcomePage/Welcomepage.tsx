@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import Spinner from './Spinner';
-import BackLog from './BackLog';
+import BackLog from '../backLog/BackLog';
 
 import { connect } from 'react-redux';
-import { addTask } from './redux/actions';
+import { addTask } from '../../redux/actions';
 import { Dispatch } from 'react';
-import { TasksState } from './redux/taskReducer';
+import { TasksState } from '../../redux/taskReducer';
 import './welcomePage.css';
-import { data } from './mockData';
-import { Link } from 'react-router-dom';
+import { data } from '../../mockData';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 export interface Project {
   _id: string;

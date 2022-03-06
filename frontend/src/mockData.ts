@@ -1,5 +1,5 @@
-import { Project } from './Welcomepage';
-import { Task } from './Welcomepage';
+import { Project } from './components/welcomePage/Welcomepage';
+import { Task } from './components/welcomePage/Welcomepage';
 
 const task1: Task = {
   _id: 'abc1',
