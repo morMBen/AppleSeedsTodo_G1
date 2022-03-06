@@ -27,7 +27,8 @@
   display: flex;
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
-  height: 5rem;
+  font-size: 2rem;
+  height: 6.563rem;
   width: 100vw;
   justify-content: space-between;
   align-items: center;
