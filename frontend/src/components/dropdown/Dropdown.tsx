@@ -1,9 +1,13 @@
 import React from 'react'
-import "./Dropdwon.css";
+import "./Dropdown.css";
 
 const Dropdown = () => {
   return (
-    <div>Dropdown</div>
+    <ul className="dropdown-list">
+      <li className="dropdown-item">Project 1</li>
+      <li className="dropdown-item">Project 2</li>
+      <li className="dropdown-item">Project 3</li>
+    </ul>
   )
 }
 
