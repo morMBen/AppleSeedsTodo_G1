@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { ReactElement } from 'react';
 import Spinner from './Spinner';
-//import ProjectCard from './ProjectCard';
-import './welcomePage.css';
+import BackLog from './BackLog';
 
-interface Project {
+import './welcomePage.css';
+import { data } from './mockData';
+import { Link } from 'react-router-dom';
+
+export interface Project {
   _id: string;
   // user: ref
   title: string;
@@ -14,7 +16,7 @@ interface Project {
   createdAt: Date;
   updatedAt: Date;
 }
-interface Task {
+export interface Task {
   _id: string;
   title: string;
   description: string;
@@ -25,86 +27,19 @@ interface Task {
   updatedAt: Date;
 }
 
-const task1: Task = {
-  _id: 'abc1',
-  title: 'title1',
-  description:
-    'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.',
-  urgency: 1,
-  isActive: true,
-  label: 'todo',
-  createdAt: new Date(),
-  updatedAt: new Date(),
-};
-
-const task2: Task = {
-  _id: 'abc2',
-  title: 'title2',
-  description:
-    'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.',
-  urgency: 2,
-  isActive: true,
-  label: 'process',
-  createdAt: new Date(),
-  updatedAt: new Date(),
-};
-
-const task3: Task = {
-  _id: 'abc3',
-  title: 'title3',
-  description:
-    'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.',
-  urgency: 3,
-  isActive: true,
-  label: 'done',
-  createdAt: new Date(),
-  updatedAt: new Date(),
-};
-const project1: Project = {
-  _id: '123a',
-  title: 'Appleseeds Todo1',
-  description: 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',
-  goal: 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.',
-  tasks: [task1, task2, task3],
-  createdAt: new Date(),
-  updatedAt: new Date(),
-};
-const project2: Project = {
-  _id: '124a',
-  title: 'Appleseeds Todo2',
-  description: 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',
-  goal: 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.',
-  tasks: [task1, task2, task3],
-  createdAt: new Date(),
-  updatedAt: new Date(),
-};
-const project3: Project = {
-  _id: '125a',
-  title: 'Appleseeds Todo2',
-  description: 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',
-  goal: 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.',
-  tasks: [task1, task2, task3],
-  createdAt: new Date(),
-  updatedAt: new Date(),
-};
-const data: Project[] = [project1, project2, project3];
-
 export default function Welcomepage() {
   //refactor to redux
   //const [tasks, setTasks] = useState<Project[]>([]);
   const [loading, setIsLoading] = useState(false);
 
   const renderProjects = () => {
-    let projects: ReactElement;
     const renderedResults = data.map((project) => {
-      projects = (
+      return (
         <div className='project-card' key={project._id} onClick={() => {}}>
           <p className='project-paragraph'>
-            {' '}
             <strong>Title:</strong> {project.title}
           </p>
           <p className='project-paragraph'>
-            {' '}
             <strong>description:</strong> {project.description}
           </p>
           <p className='project-paragraph'>
@@ -112,7 +47,6 @@ export default function Welcomepage() {
           </p>
         </div>
       );
-      return projects;
     });
     return renderedResults;
   };
@@ -120,6 +54,7 @@ export default function Welcomepage() {
   return (
     <div className='welcome-page'>
       <h1>Projects</h1> {loading ? <Spinner /> : renderProjects()}
+      <Link to='/BackLog'>hhhh</Link>;
     </div>
   );
 }
