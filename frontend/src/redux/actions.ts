@@ -1,6 +1,12 @@
-export type Action = { type: 'ADD_TASK' | "REMOVE_TASK", 
+import { Constants } from "./constants";
+
+export type Action = { type: 'ADD_TASK' | "REMOVE_TASK" | "ADD_TODO", 
  payload: string };
- 
+
+ export const addTodo = (todo: string): Action => ({
+  type: Constants.addTodo,
+  payload: todo,
+});
 
 export const addTask = (note: string): Action => ({
   type: 'ADD_TASK',
@@ -17,11 +23,6 @@ export const removeTask = (note: string): Action => ({
 //   type: 'todos/todoAdded',
 //   payload: 'Buy milk'
 // }
-
-
-
-
-
 
 
 

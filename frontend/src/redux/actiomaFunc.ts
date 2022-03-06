@@ -8,7 +8,6 @@ export const addTask = (note: string) => {
     })
 }
 };
-
 export const removeTask = (note: string) => {
     return (dispatch : Dispatch) => {
         dispatch({
