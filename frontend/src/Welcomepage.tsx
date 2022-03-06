@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import Spinner from './Spinner';
 import BackLog from './BackLog';
 
+import { connect } from 'react-redux';
+import { addTask } from './redux/actions';
+import { Dispatch } from 'react';
+import { TasksState } from './redux/taskReducer';
 import './welcomePage.css';
 import { data } from './mockData';
 import { Link } from 'react-router-dom';
@@ -27,9 +31,9 @@ export interface Task {
   updatedAt: Date;
 }
 
-export default function Welcomepage() {
+export default function _WelcomePage() {
   //refactor to redux
-  //const [tasks, setTasks] = useState<Project[]>([]);
+  const [tasks, setTasks] = useState<Project[]>([]);
   const [loading, setIsLoading] = useState(false);
 
   const renderProjects = () => {
@@ -53,8 +57,13 @@ export default function Welcomepage() {
 
   return (
     <div className='welcome-page'>
+      {/* {console.log(props.tasks) } */}
       <h1>Projects</h1> {loading ? <Spinner /> : renderProjects()}
       <Link to='/BackLog'>hhhh</Link>;
     </div>
   );
 }
+const stateProps = ({ tasks }: TasksState) => {
+  return { tasks };
+};
+export const WelcomePage = connect(stateProps, { addTask })(_WelcomePage);

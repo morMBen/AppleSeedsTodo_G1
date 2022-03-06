@@ -8,7 +8,7 @@
 //   updatedAt: Date
 // }
 
-interface Task {
+export interface Task {
   _id: string
   // project: string
   title: string
@@ -20,7 +20,7 @@ interface Task {
   updatedAt: Date
 }
 
-interface Project {
+export interface Project {
   _id: string
   // user: ref
   title: string
@@ -33,7 +33,7 @@ interface Project {
 
 const task1: Task = {
   _id: "abc1",
-  title: "title1",
+  title: "task1",
   description: "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
   urgency: 1,
   isActive: true,
@@ -44,7 +44,7 @@ const task1: Task = {
 
 const task2: Task = {
   _id: "abc2",
-  title: "title2",
+  title: "task2",
   description: "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
   urgency: 2,
   isActive: true,
@@ -55,7 +55,7 @@ const task2: Task = {
 
 const task3: Task = {
   _id: "abc3",
-  title: "title3",
+  title: "task3",
   description: "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
   urgency: 3,
   isActive: true,

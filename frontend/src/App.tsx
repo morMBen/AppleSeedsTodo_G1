@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addTask } from './redux/actions';
 import { tasksReducer } from './redux/taskReducer';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Navbar from './components/navbar/Navbar';
 
 function App() {
   return (
@@ -22,8 +23,8 @@ function App() {
           </Switch>
         </div>
       </BrowserRouter>
-      {/* here goees navBar */}
-      {/* <Welcomepage /> */}
+      <Navbar></Navbar>
+      <Welcomepage />
     </div>
   );
 }
