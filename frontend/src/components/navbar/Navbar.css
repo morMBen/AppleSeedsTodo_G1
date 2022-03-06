@@ -4,7 +4,7 @@
   --color-light: #ffffff;
   --color-dark: #2D2D2D;
   --borders-debug: red;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 * {
@@ -47,7 +47,7 @@
 
 .nav-left {
     display: flex;
-    gap: 2em;
+    gap: 2rem;
 }
 
 .logo {
