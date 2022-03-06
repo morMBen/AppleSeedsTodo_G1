@@ -16,4 +16,17 @@ export const createProjectSchema = object({
   })
 });
 
+export const updateProjectSchema = object({
+  params: object({
+    pojectId: string({
+      required_error: "projectId is required",
+    })
+  }),
+  body: object({
+    title: string().optional(),
+    goal: string().optional(),
+    description: string().optional(),
+  })
+});
+
 export type CreateProjectInput = TypeOf<typeof createProjectSchema>;

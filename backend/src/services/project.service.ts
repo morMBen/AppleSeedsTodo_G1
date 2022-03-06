@@ -37,3 +37,22 @@ export async function getProjectByIdService(
 ): Promise<Project | undefined> {
   return mockProjects.find((project) => project._id === projectId);
 }
+
+// export async function updateProjectService(update, options) {
+
+// }
+
+
+export async function deleteProjectService(projectId: string) {
+  console.log(projectId);
+  
+  const projectIndex = mockProjects.findIndex((project) => project._id === projectId);
+  console.log("projectIndex: ", projectIndex);
+  
+  if (projectIndex < 0) {
+    return { ok: false, data: null, message: "Project not found" }
+  }
+
+  mockProjects.splice(projectIndex, 1);
+  return { ok: true, data: { projectId }, message: "Success" }
+}
