@@ -6,13 +6,12 @@ const Navbar = () => {
     <>
       <ul className='navbar'>
         <div className='nav-left'>
-          <li className='navbar-item'>
+          <li className='navbar-item select'>
             {/* <Link></Link> */}
             SelectP
             <i className='fa fa-play'></i>
           </li>
           <li className='navbar-item'>About</li>
-          <li className='navbar-item'>Projects</li>
         </div>
         <div className='nav-right'>
           <li className='navbar-item logo'>LOGO</li>
