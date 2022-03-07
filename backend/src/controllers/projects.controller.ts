@@ -45,7 +45,7 @@ export async function updateProjectHandler(req: Request, res: Response) {
 
   try {
     const updatedProject = updateProjectUtil(project, req.body);
-    const resObj = 
+    const resObj = {};
 
     return res.status(200).send(resObj);
   } catch (error: any) {
