@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import validateResource from "../middlewere/validateResource";
 import { 
   createNewTaskHandler,
+  deleteTaskHandler,
   getTasksByProjectHandler,
   // updateTaskProgressHandler,
 } from "../controllers/tasks.controller";
@@ -35,5 +36,6 @@ Router.get(
 //   updateTaskProgressHandler,
 // );
 
+Router.delete('/delete-task/:projectId', deleteTaskHandler);
 
 export default Router;
