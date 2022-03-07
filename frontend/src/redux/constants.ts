@@ -2,6 +2,7 @@ export enum Constants {
 addTodo = "ADD_TODO",
 removeTodo = "REMOVE_TODO",
 setTodo = "SET_TODO",
+getTask= "GET_TASK",
 addOneProjects = "ADD_ONE_PROJECTS",  
 addProject = "ADD_PROJECT",  
 fetchProjects = "FETCH_PROJECTS",
