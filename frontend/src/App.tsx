@@ -9,6 +9,9 @@ import { addTask } from './redux/actions';
 import { tasksReducer } from './redux/taskReducer';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
+//import ProjectCard from './components/ProjectCard';
+import ProjectCardPage from './components/ProjectCardPage';
+import ProjectCard from './components/ProjectCard';
 
 function App() {
   return (
@@ -20,6 +23,7 @@ function App() {
             <Route path='/BackLog' exact component={BackLog} />
             <Route path='/Board' exact component={Board} />
             <Route path='/About' exact component={About} />
+            <Route path='/projects/:id' exact component={ProjectCardPage} />
           </Switch>
         </div>
       </BrowserRouter>

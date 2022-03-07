@@ -9,6 +9,8 @@ import { TasksState } from '../../redux/taskReducer';
 import './welcomePage.css';
 import { data } from '../../mockData';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
+import ProjectCard from '../ProjectCard';
+import ProjectCardPage from '../ProjectCardPage';
 
 export interface Project {
   _id: string;
@@ -39,19 +41,20 @@ export default function _WelcomePage() {
   const renderProjects = () => {
     const renderedResults = data.map((project) => {
       return (
-        <div className='project-card' key={project._id} onClick={() => {}}>
-          <p className='project-paragraph'>
-            <strong>Title:</strong> {project.title}
-          </p>
-          <p className='project-paragraph'>
-            <strong>description:</strong> {project.description}
-          </p>
-          <p className='project-paragraph'>
-            <strong>goal:</strong> {project.goal}
-          </p>
+        <div>
+          <Link to={`./projects/:${project._id}`} key={project._id}>
+            <ProjectCard
+              project={project}
+              key={project._id}
+              title={project.title}
+              description={project.description}
+              goal={project.goal}
+            ></ProjectCard>
+          </Link>
         </div>
       );
     });
+
     return renderedResults;
   };
 
@@ -59,7 +62,7 @@ export default function _WelcomePage() {
     <div className='welcome-page'>
       {/* {console.log(props.tasks) } */}
       <h1>Projects</h1> {loading ? <Spinner /> : renderProjects()}
-      <Link to='/BackLog'>hhhh</Link>;
+      <Link to='/BackLog'>go to backLog</Link>;
     </div>
   );
 }

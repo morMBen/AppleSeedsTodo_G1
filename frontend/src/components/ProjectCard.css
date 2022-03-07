@@ -1,0 +1,12 @@
+.project-card {
+  height: 100vh;
+  width: 80%;
+}
+.container-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: auto;
+  width: 80%;
+}

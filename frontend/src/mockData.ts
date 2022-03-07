@@ -56,7 +56,7 @@ const project2: Project = {
 };
 const project3: Project = {
   _id: '125a',
-  title: 'Appleseeds Todo2',
+  title: 'Appleseeds Todo3',
   description: 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',
   goal: 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.',
   tasks: [task1, task2, task3],
