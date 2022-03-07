@@ -1,4 +1,5 @@
 import express, { Express, Request, Response } from 'express';
+import { connectDb } from './database/connect';
 import cors from 'cors';
 import morgan from 'morgan';
 import helmet from 'helmet';
@@ -6,6 +7,7 @@ import { corsConfig } from './config';
 import router from './routes/routerIndex';
 
 const app: Express = express();
+connectDb();
 
 app.use(cors(corsConfig));
 app.use(morgan('dev'));
