@@ -3,11 +3,14 @@ import { Project } from "../mock-data";
 
 export const updateProjectUtil = (target: Project, update: Project): Project => {
   // let key: keyof typeof update;
+  let result = { ...target };
 
   Object.keys(update).forEach(key => {
     const k = key as keyof Project;
-    if (target.hasOwnProperty(k) && update[k]) {
+    const updatingValue = update[k];
+    if (target.hasOwnProperty(k) && updatingValue) {
       // target[k] = update[k];
+      result = { ...result, [k]: updatingValue };
     }
   })
 
