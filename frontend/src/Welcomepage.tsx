@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ReactElement } from 'react';
 import Spinner from './Spinner';
 import { connect } from 'react-redux';
-import { addTask  } from './redux/actions';
+import { addTask } from './redux/actions';
 import { Dispatch } from 'react';
 //import ProjectCard from './ProjectCard';
 import { TasksState } from './redux/taskReducer';
@@ -100,22 +100,21 @@ const data: Project[] = [project1, project2, project3];
 //       payload: note,
 //   })
 // }
-interface WelcomePageProps{
+interface WelcomePageProps {
   tasks: string[];
-  addTask:Function
-
+  addTask: Function;
 }
 
-export default function _WelcomePage(props:WelcomePageProps) { 
+export default function _WelcomePage(props: WelcomePageProps) {
   //  const mapDispatchToProps = (note: string) => {
-//   return (dispatch : any) => {
-//       dispatch({
-//       type: 'ADD_TASK',
-//       payload: note,
-//   })
-// }
+  //   return (dispatch : any) => {
+  //       dispatch({
+  //       type: 'ADD_TASK',
+  //       payload: note,
+  //   })
+  // }
   //refactor to redux
-  const [tasks, setTasks] = useState <Project[]>([]);
+  const [tasks, setTasks] = useState<Project[]>([]);
   const [loading, setIsLoading] = useState(false);
 
   const renderProjects = () => {
@@ -140,15 +139,15 @@ export default function _WelcomePage(props:WelcomePageProps) {
     });
     return renderedResults;
   };
-  
+
   return (
     <div className='welcome-page'>
-      {console.log(props.tasks) }
+      {console.log(props.tasks)}
       <h1>Projects</h1> {loading ? <Spinner /> : renderProjects()}
     </div>
   );
 }
-const stateProps=({tasks}:TasksState)=>{
-return {tasks}
-}
-export const WelcomePage = connect(stateProps,{addTask})(_WelcomePage)
+const stateProps = ({ tasks }: TasksState) => {
+  return { tasks };
+};
+export const WelcomePage = connect(stateProps, { addTask })(_WelcomePage);
