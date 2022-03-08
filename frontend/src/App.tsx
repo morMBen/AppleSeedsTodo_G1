@@ -4,7 +4,7 @@ import './App.css';
 import { State } from './redux/combine';
 import './App.css';
 import Welcomepage from './components/welcomePage/Welcomepage';
-// import BackLog from './components/backLog/BackLog';
+import BackLog from './components/backLog/BackLog';
 import Board from './Board';
 import About from './About';
 import { addTask } from './Actions/taskAction';
@@ -29,7 +29,7 @@ function App() {
             {/* <Route path='/BackLog' exact component={BackLog} /> */}
             <Route path='/Board' exact component={Board} />
             <Route path='/About' exact component={About} />
-            {/* <Route path='/projects/:id' exact component={BackLog} /> */}
+            <Route path='/projects/:id' exact component={BackLog} />
           </Switch>
         </div>
       </BrowserRouter>

@@ -1,7 +1,6 @@
 import {I_Project, first_initial_state, I_Action_Project } from "../Types/taskType";
 import {Constants} from "../redux/constants"
 
-// const intial_State : first_initial_state  =
 const intial_State : I_Project[] = 
    [{
     project_id: "sivan",

@@ -12,7 +12,7 @@ export const fetchProjects =
     console.log("fetch all projects", asyncResp.data)
     dispatch(fetchProjects())
     } catch (error) {
-      console.log("error")
+      console.log(error)
     }
   }
   export const fetchOneProject =
@@ -24,40 +24,40 @@ export const fetchProjects =
     console.log("fetch only one projects", asyncResp.data)
     dispatch(fetchOneProject(project_id))
     } catch (error) {
-      console.log("error")
+      console.log(error)
     }
   }
   export const setProject  =
-  (): ThunkAction<void, {}, unknown, AnyAction> =>
+  (project_id : String): ThunkAction<void, {}, unknown, AnyAction> =>
   async dispatch => {
     try {
-      const asyncResp = await Data.post("/update-project/:projectId");
+      const asyncResp = await Data.post(`/update-project/${project_id}`);
     console.log("update one project", asyncResp.data)
-    dispatch(setProject())
+    dispatch(setProject(project_id))
     } catch (error) {
-      console.log("error")
+      console.log(error)
     }
   }
   export const addTask  =
-  (): ThunkAction<void, {}, unknown, AnyAction> =>
+  (project_id : String): ThunkAction<void, {}, unknown, AnyAction> =>
   async dispatch => {
     try {
-      const asyncResp = await Data.post("/create-new-task/:projectId");
+      const asyncResp = await Data.post(`/create-new-task/${project_id}`);
     console.log("add new task to project", asyncResp.data)
-    dispatch(addTask())
+    dispatch(addTask(project_id))
     } catch (error) {
-      console.log("error")
+      console.log(error)
     }
   }
   export const getTasks  =
-  (): ThunkAction<void, {}, unknown, AnyAction> =>
+  (project_id : String): ThunkAction<void, {}, unknown, AnyAction> =>
   async dispatch => {
     try {
-      const asyncResp = await Data.get("'/get-tasks-by-project/:projectId");
+      const asyncResp = await Data.get(`/get-tasks-by-project/${project_id}`);
     console.log("get tasks by project", asyncResp.data)
-    dispatch(getTasks())
+    dispatch(getTasks(project_id))
     } catch (error) {
-      console.log("error")
+      console.log(error)
     }
   }
 
