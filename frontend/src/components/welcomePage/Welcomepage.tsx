@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import Spinner from './Spinner';
-import BackLog from '../backLog/BackLog';
-
+// import BackLog from '../backLog/BackLog';
 import { connect } from 'react-redux';
-import { addTask } from '../../redux/actions';
+import { addTask } from '../../Actions/taskAction';
 import { Dispatch } from 'react';
-import { TasksState } from '../../redux/taskReducer';
+// import { TasksState } from '../../Reducers/';
 import './welcomePage.css';
 import { data } from '../../mockData';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
@@ -43,10 +42,9 @@ export default function _WelcomePage() {
   const renderProjects = () => {
     const renderedResults = data.map((project) => {
       return (
-        <div>
-          <Link to={`./projects/:${project._id}`} key={project._id}>
+        <div key={project.title}>
+          <Link to={`./projects/:${project._id}`}>
             <ProjectCard
-              project={project}
               key={project._id}
               title={project.title}
               description={project.description}
@@ -65,7 +63,7 @@ export default function _WelcomePage() {
     </div>
   );
 }
-const stateProps = ({ tasks }: TasksState) => {
-  return { tasks };
-};
-export const WelcomePage = connect(stateProps, { addTask })(_WelcomePage);
+// const stateProps = ({ tasks }: TasksState) => {
+//   return { tasks };
+// };
+// export const WelcomePage = connect(stateProps, { addTask })(_WelcomePage);

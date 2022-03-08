@@ -1,6 +1,9 @@
 import  {combineReducers} from "redux";
-import {tasksReducer} from './taskReducer';
+import {taskReducer} from '../Reducers/taskRducer';
+import {projectReducer} from '../Reducers/projectReducer';
 
-const reducers = combineReducers({ taskReducer: tasksReducer,
+
+const reducers = combineReducers({ tasks: taskReducer, project: projectReducer
 });
 export default reducers
+export type State = ReturnType<typeof reducers>;
