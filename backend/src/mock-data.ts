@@ -8,32 +8,32 @@
 //   updatedAt: Date
 // }
 
-interface Task {
-  _id: string
-  // project: string
+export interface Task {
+  _id?: string
+  projectId?: string
   title: string
   description: string
   urgency: number // 1-not urgent ... urgent
   isActive: boolean
   label: string
-  createdAt: Date
-  updatedAt: Date
+  createdAt?: Date
+  updatedAt?: Date
 }
 
-interface Project {
-  _id: string
+export interface Project {
+  _id?: string
   // user: ref
   title: string
   description: string
   goal: string
-  tasks: Task[]
-  createdAt: Date
-  updatedAt: Date
+  tasks?: Task[]
+  createdAt?: Date
+  updatedAt?: Date
 }
 
 const task1: Task = {
   _id: "abc1",
-  title: "title1",
+  title: "task1",
   description: "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
   urgency: 1,
   isActive: true,
@@ -44,7 +44,7 @@ const task1: Task = {
 
 const task2: Task = {
   _id: "abc2",
-  title: "title2",
+  title: "task2",
   description: "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
   urgency: 2,
   isActive: true,
@@ -55,7 +55,7 @@ const task2: Task = {
 
 const task3: Task = {
   _id: "abc3",
-  title: "title3",
+  title: "task3",
   description: "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
   urgency: 3,
   isActive: true,
@@ -87,3 +87,17 @@ const project2: Project = {
 const projects: Project[] = [project1, project2];
 
 export default projects;
+
+
+
+// request: 
+//   params: objectId (string)
+
+// response:
+//   {
+//     ok (boolean),
+//     data: {
+//       objectId (string) || null
+//     },
+//     message (string)
+//   }

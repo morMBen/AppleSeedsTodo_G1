@@ -3,14 +3,15 @@ import {Constants} from "../redux/constants"
 
 // const intial_State : first_initial_state  =
 const intial_State : I_Project[] = 
-  // tasks: [ {taskName: "hila",
-  []
-
-
+   [{
+    project_id: "sivan",
+    name:"sivan",
+    description: "hila",
+    goal: "sivan",
+    tasks: [],}]
+    // tasks: Array<I_Task>;}
 
 export const projectReducer = (state = intial_State, action : I_Action_Project) => {
-    // const tasks = state.tasks
-    console.log("from red", action.payload);
     switch (action.type) {
         case Constants.fetchProjects:
         return [...state, ];

@@ -1,7 +1,7 @@
 import { array, object, string, TypeOf } from "zod";
 import { createTaskSchema } from "./task.schema";
 
-export const createUserSchema = object({
+export const createProjectSchema = object({
   body: object({
     title: string({
       required_error: "Title is required",
@@ -16,7 +16,17 @@ export const createUserSchema = object({
   })
 });
 
-export type CreateUserInput = Omit<
-  TypeOf<typeof createUserSchema>,
-  'body.passwordConfirmation'
->;
+export const updateProjectSchema = object({
+  params: object({
+    pojectId: string({
+      required_error: "projectId is required",
+    })
+  }),
+  body: object({
+    title: string().optional(),
+    goal: string().optional(),
+    description: string().optional(),
+  })
+});
+
+export type CreateProjectInput = TypeOf<typeof createProjectSchema>;
