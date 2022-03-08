@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ReactElement } from 'react';
-import Spinner from './Spinner';
+import Spinner from './components/welcomePage/Spinner';
 import { connect } from 'react-redux';
 import { addTask } from './redux/actions';
 import { Dispatch } from 'react';
