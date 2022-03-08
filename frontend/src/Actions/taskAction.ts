@@ -49,3 +49,11 @@ export const setProject = ( payload : I_Project)  => {
         payload: payload   
     };
 }
+export const fetchOneProject = ( payload : I_Project)  => {
+    return{
+        type: Constants.fetchOneProject,
+        payload: payload   
+    };
+}
+
+

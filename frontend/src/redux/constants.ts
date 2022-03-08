@@ -7,6 +7,7 @@ addOneProject = "ADD_ONE_PROJECT",
 removeProject = "REMOVE_PROJECT",
 fetchProjects = "FETCH_PROJECTS",
 setProject = "SET_PROJECT",
+fetchOneProject = "FETCH_ONE_PROJECT",
 }
 
 
