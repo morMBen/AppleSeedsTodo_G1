@@ -8,7 +8,7 @@ function App() {
   return (
     <div className='App'>
       <Navbar></Navbar>
-      {/* <Welcomepage tasks={[]} addTask={()=>{}}/> */}
+      <Welcomepage tasks={[]} addTask={()=>{}}/>
     </div>
   );
 }

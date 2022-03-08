@@ -18,8 +18,7 @@ const Navbar = (props:any) => {
         <Router>
           <div className='nav-left'>
             <li className='navbar-item select'>
-              <Link to='/products' onClick={handleClick}>
-                {' '}
+              <Link to='/projects' onClick={handleClick}>
                 SelectP
               </Link>
               {/* <i className='fa fa-play'></i> */}
