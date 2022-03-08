@@ -5,13 +5,15 @@ const Dropdown = ({setIsClicked}:any) => {
   const [projects, setProjects] = useState([
     { _id: 1, name: 'Project1' },
     { _id: 2, name: 'Project2' },
-    { _id: 3, name: 'Project3' },
+    { _id: 3, name: 'hhh' },
     { _id: 4, name: 'Project4' },
   ]);
 
   const selectProject = (e: any) => {
     setIsClicked(false);
     console.log(e.target)
+    //TODO - link to projectId page 
+
   };
 
   return (
