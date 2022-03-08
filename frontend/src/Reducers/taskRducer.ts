@@ -1,16 +1,18 @@
-import {I_Task, I_Action, first_initial_state } from "../Types/taskType";
+import {I_Task, I_Action_Task, first_initial_state } from "../Types/taskType";
 import {Constants} from "../redux/constants"
 
 // const intial_State : first_initial_state  =
 const intial_State : I_Task[] = 
   // tasks: [ {taskName: "hila",
-   [ {taskName: "liran",
+   [ {
+    _id: "111",
+    taskName: "liran",
     taskDescription: "july",
     updatedAt: new Date(),
     createdAt: new Date(),}]
 
 
-export const taskReducer = (state = intial_State, action : I_Action) => {
+export const taskReducer = (state = intial_State, action : I_Action_Task) => {
     // const tasks = state.tasks
     console.log("from red", action.payload);
     switch (action.type) {
