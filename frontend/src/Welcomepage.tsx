@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ReactElement } from 'react';
-//import Spinner from './Spinner';
+import Spinner from './components/welcomePage/Spinner';
 import { connect } from 'react-redux';
 import { addTask } from './redux/actions';
 import { Dispatch } from 'react';
@@ -143,8 +143,7 @@ export default function _WelcomePage(props: WelcomePageProps) {
   return (
     <div className='welcome-page'>
       {console.log(props.tasks)}
-      {/* <h1>Projects</h1> {loading ? <Spinner /> : renderProjects()} */}
-      <h1>Projects</h1> {renderProjects()}
+      <h1>Projects</h1> {loading ? <Spinner /> : renderProjects()}
     </div>
   );
 }
