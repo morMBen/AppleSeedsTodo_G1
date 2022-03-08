@@ -18,6 +18,6 @@ Router.post(
   createNewProjectHandler,
 );
 
-Router.get('/get-all-projects-meta', getAllProjectsDetailsHandler);
+Router.get('/get-all-projects-details', getAllProjectsDetailsHandler);
 
 export default Router;

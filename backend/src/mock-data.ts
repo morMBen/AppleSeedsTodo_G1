@@ -9,8 +9,8 @@
 // }
 
 export interface Task {
+  // projectId: string
   _id: string
-  // project: string
   title: string
   description: string
   urgency: number // 1-not urgent ... urgent
