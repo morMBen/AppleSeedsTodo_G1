@@ -1,27 +1,27 @@
 import { Constants } from "../redux/constants";
 import {I_Task} from "../Types/taskType";
 
-export const addTodo = ( payload : I_Task)  => {
+export const addTask = ( payload : I_Task)  => {
     return{
-        type: Constants.addTodo,
+        type: Constants.addTask,
         palyload: payload   
     };
 }
 export const getTask = ( payload : undefined)  => {
     return{
         type: Constants.getTask,
-        palyload: payload ,  
+        payload: payload  
     };
 }
-export const removeTodo = ( payload : I_Task)  => {
+export const removeTask = ( payload : I_Task)  => {
     return{
-        type: Constants.removeTodo,
-        palyload: payload   
+        type: Constants.removeTask,
+        payload: payload   
     };
 }
-export const setTodo = ( payload : I_Task)  => {
+export const setTask = ( payload : I_Task)  => {
     return{
-        type: Constants.setTodo,
-        palyload: payload   
+        type: Constants.setTask,
+        payload: payload   
     };
 }

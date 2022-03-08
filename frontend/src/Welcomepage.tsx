@@ -99,8 +99,8 @@ interface WelcomePageProps {
   addTodo: Function;
 }
 function _WelcomePage(props: WelcomePageProps) {
-  const [tasks, setTasks] = useState<Project[]>([]);
-  const [loading, setIsLoading] = useState(false);
+  // const [tasks, setTasks] = useState<Project[]>([]);
+  // const [loading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
   console.log(state);

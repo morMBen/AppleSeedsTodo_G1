@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import { WelcomePage } from './Welcomepage';
-import { useDispatch, useSelector } from 'react-redux';
-import { addTask } from './redux/actions';
-import { tasksReducer } from './redux/taskReducer';
+import { addTask } from './Actions/taskAction';
+import { State } from './redux/combine';
 
 function App() {
+  const dispatch = useDispatch();
+  const state = useSelector((state: State) => state);
+  console.log('state from app ts', state);
   return (
     <div className='App'>
       <WelcomePage />
