@@ -1,13 +1,30 @@
 import React, { useState } from 'react';
 import './Dropdown.css';
 
-const Dropdown = () => {
+const Dropdown = ({setIsClicked}:any) => {
+  const [projects, setProjects] = useState([
+    { _id: 1, name: 'Project1' },
+    { _id: 2, name: 'Project2' },
+    { _id: 3, name: 'Project3' },
+    { _id: 4, name: 'Project4' },
+  ]);
+
+  const selectProject = (e: any) => {
+    setIsClicked(false);
+    console.log(e.target)
+  };
 
   return (
     <ul className='dropdown-list'>
-      <li className='dropdown-item'>Project 1</li>
-      <li className='dropdown-item'>Project 2</li>
-      <li className='dropdown-item'>Project 3</li>
+      {projects.map((project) => {
+        {
+          return (
+            <li onClick={selectProject} className='dropdown-item' key={project._id}>
+              {project.name}
+            </li>
+          );
+        }
+      })}
     </ul>
   );
 };
