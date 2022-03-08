@@ -9,26 +9,26 @@
 // }
 
 export interface Task {
-  _id: string
-  // project: string
+  _id?: string
+  projectId?: string
   title: string
   description: string
   urgency: number // 1-not urgent ... urgent
   isActive: boolean
   label: string
-  createdAt: Date
-  updatedAt: Date
+  createdAt?: Date
+  updatedAt?: Date
 }
 
 export interface Project {
-  _id: string
+  _id?: string
   // user: ref
   title: string
   description: string
   goal: string
-  tasks: Task[]
-  createdAt: Date
-  updatedAt: Date
+  tasks?: Task[]
+  createdAt?: Date
+  updatedAt?: Date
 }
 
 const task1: Task = {
@@ -87,3 +87,17 @@ const project2: Project = {
 const projects: Project[] = [project1, project2];
 
 export default projects;
+
+
+
+// request: 
+//   params: objectId (string)
+
+// response:
+//   {
+//     ok (boolean),
+//     data: {
+//       objectId (string) || null
+//     },
+//     message (string)
+//   }
