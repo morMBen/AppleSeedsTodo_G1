@@ -40,12 +40,27 @@ export async function updateProjectHandler(req: Request, res: Response) {
 
   const project = await getProjectByIdService(projectId);
   if (!project) {
-    return res.status(404).send("project not found");
+    return res.status(200).send({ ok: false, data: null, message: "project not found" });
   }
-
+  
   try {
     const updatedProject = updateProjectUtil(project, req.body);
-    const resObj = {};
+    if (!updatedProject) {
+      return res.status(200).send({ ok: false, data: null, message: "Type error" });
+    }
+
+    const resObj = {
+      ok: true,
+      data: {
+        _id: updatedProject._id,
+        title: updatedProject.title,
+        description: updatedProject.description,
+        goal: updatedProject.goal,
+        createdAt: updatedProject.createdAt,
+        updatedAt: updatedProject.updatedAt,
+      },
+      message: "Success"
+    };
 
     return res.status(200).send(resObj);
   } catch (error: any) {
