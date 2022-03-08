@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Project } from './welcomePage/Welcomepage';
 import { data } from '../mockData';
-import ProjectCardPage from './ProjectCardPage';
+import BackLog from './backLog/BackLog';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import './ProjectCard.css';
 
@@ -23,13 +23,6 @@ export default function ProjectCard(props: any) {
           <strong>goal:</strong> {props.goal}
         </p>
       </div>
-      {/* <button
-        onClick={() => {
-          return <ProjectCardPage id={props.id}></ProjectCardPage>;
-        }}
-      >
-        move to Project
-      </button> */}
     </div>
   );
 }

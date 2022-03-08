@@ -10,7 +10,7 @@ import './welcomePage.css';
 import { data } from '../../mockData';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import ProjectCard from '../ProjectCard';
-import ProjectCardPage from '../ProjectCardPage';
+import { useSelector } from 'react-redux';
 
 export interface Project {
   _id: string;
@@ -37,6 +37,8 @@ export default function _WelcomePage() {
   //refactor to redux
   const [tasks, setTasks] = useState<Project[]>([]);
   const [loading, setIsLoading] = useState(false);
+  //needs typescript..
+  const state = useSelector((state) => state);
 
   const renderProjects = () => {
     const renderedResults = data.map((project) => {
@@ -54,15 +56,12 @@ export default function _WelcomePage() {
         </div>
       );
     });
-
     return renderedResults;
   };
 
   return (
     <div className='welcome-page'>
-      {/* {console.log(props.tasks) } */}
       <h1>Projects</h1> {loading ? <Spinner /> : renderProjects()}
-      <Link to='/BackLog'>go to backLog</Link>;
     </div>
   );
 }

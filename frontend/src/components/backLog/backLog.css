@@ -1,7 +1,19 @@
 .backLog-container {
   height: 100vh;
-  background-color: purple;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.backlog-component-container {
+  height: 100vh;
+}
+.renderedResults-container {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tasksHeaders-container {
+  display: flex;
+  justify-content: space-evenly;
 }
