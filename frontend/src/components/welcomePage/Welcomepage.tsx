@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Spinner from './Spinner';
 // import BackLog from '../backLog/BackLog';
 import { connect } from 'react-redux';
@@ -9,7 +9,8 @@ import './welcomePage.css';
 import { data } from '../../mockData';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import ProjectCard from '../ProjectCard';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchProjects } from '../../Actions/taskAction';
 
 export interface Project {
   _id: string;
@@ -36,13 +37,19 @@ export default function _WelcomePage() {
   //refactor to redux
   const [tasks, setTasks] = useState<Project[]>([]);
   const [loading, setIsLoading] = useState(false);
+  const myState = useSelector((state: any) => state);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchProjects());
+    console.log(myState.project);
+  }, []);
   //needs typescript..
-  const state = useSelector((state) => state);
 
   const renderProjects = () => {
-    const renderedResults = data.map((project) => {
+    const renderedResults = myState.project.map((project: any) => {
       return (
-        <div key={project.title}>
+        <div key={project.project_id}>
           <Link to={`./projects/:${project._id}`}>
             <ProjectCard
               key={project._id}

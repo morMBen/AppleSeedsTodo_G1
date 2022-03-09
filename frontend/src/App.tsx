@@ -26,7 +26,6 @@ function App() {
         <div className='router-container'>
           <Switch>
             <Route path='/' exact component={Welcomepage} />
-            {/* <Route path='/BackLog' exact component={BackLog} /> */}
             <Route path='/Board' exact component={Board} />
             <Route path='/About' exact component={About} />
             <Route path='/projects/:id' exact component={BackLog} />
