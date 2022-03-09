@@ -2,9 +2,9 @@ import express, { Request, Response } from "express";
 import validateResource from "../middlewere/validateResource";
 import {
   createNewProjectHandler,
-  // deleteProjectHandler,
-  // getAllProjectsDetailsHandler,
+  getAllProjectsDetailsHandler,
   // updateProjectHandler,
+  // deleteProjectHandler,
 } from "../controllers/projects.controller";
 import { createProjectSchema, updateProjectSchema } from "../schema/project.shema";
 
@@ -20,7 +20,7 @@ Router.post(
   createNewProjectHandler,
 );
 
-// Router.get('/get-all-projects-details', getAllProjectsDetailsHandler);
+Router.get('/get-all-projects-details', getAllProjectsDetailsHandler);
 
 // Router.put('/update-project/:projectId', updateProjectHandler);
 

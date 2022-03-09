@@ -4,7 +4,7 @@ import { CreateProjectInput } from '../schema/project.shema';
 import { I_Project } from '../mock-data';
 import {
   createProjectService,
-  // getAllProjectsDetailsService,
+  getAllProjectsDetailsService,
   // getProjectByIdService,
   // deleteProjectService,
 } from '../services/project.service';
@@ -25,16 +25,16 @@ export async function createNewProjectHandler(
   }
 }
 
-// export async function getAllProjectsDetailsHandler(req: Request, res: Response) {
-//   try {
-//     const resObj = await getAllProjectsDetailsService();
+export async function getAllProjectsDetailsHandler(req: Request, res: Response) {
+  try {
+    const resObj = await getAllProjectsDetailsService({});
 
-//     return res.status(200).send(resObj);
-//   } catch (error: any) {
-//     console.error(error);
-//     return res.status(400).send(error.message);
-//   }
-// }
+    return res.status(200).send(resObj);
+  } catch (error: any) {
+    console.error(error);
+    return res.status(400).send(error.message);
+  }
+}
 
 // export async function updateProjectHandler(req: Request, res: Response) {
 //   const { projectId } = req.params;

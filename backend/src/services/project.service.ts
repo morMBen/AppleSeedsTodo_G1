@@ -24,18 +24,13 @@ export async function createProjectService(
 }
 
 
-// export async function getAllProjectsDetailsService() { //: Promise<Project[]> {
-//   return mockProjects.map((obj) => {  // Cut out task from projects  
-//     return {
-//       _id: obj._id,
-//       title: obj.title,
-//       description: obj.description,
-//       goal: obj.goal,
-//       createdAt: obj.createdAt,
-//       updatedAt: obj.updatedAt,
-//     }
-//   })
-// }
+export async function getAllProjectsDetailsService(
+  query: FilterQuery<ProjectDocument>,
+  options: QueryOptions = { lean: true },
+) {
+  const projectDtails = await ProjectModel.find(query, {}, options).select('-tasks');
+  return {ok: true, data: projectDtails, message: "Success"};
+}
 
 // export async function getProjectByIdService(
 //   projectId: string
