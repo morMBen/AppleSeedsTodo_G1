@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import { ProjectDocument } from './project.model';
 
 export interface TaskDocument extends mongoose.Document {
-  project: ProjectDocument['_id'];
+  projectId: ProjectDocument['_id'];
   title: string;
   description: string;
   urgency: number; // 1-not urgent ... urgent

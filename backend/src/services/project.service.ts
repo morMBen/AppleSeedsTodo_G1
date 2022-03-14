@@ -16,7 +16,7 @@ import ProjectModel, { ProjectDocument } from "../models/project.model";
 export async function createProjectService(
   projectData: DocumentDefinition<ProjectDocument>,
 ) {
-  const newProject = new ProjectModel(projectData)
+  const newProject = new ProjectModel(projectData);
   const result = await newProject.save();
   console.log("project: ", result);
   
@@ -28,15 +28,20 @@ export async function getAllProjectsDetailsService(
   query: FilterQuery<ProjectDocument>,
   options: QueryOptions = { lean: true },
 ) {
-  const projectDtails = await ProjectModel.find(query, {}, options).select('-tasks');
-  return {ok: true, data: projectDtails, message: "Success"};
+  try {
+    const projectDtails = await ProjectModel.find(query, {}, options).select('-tasks');
+    return {ok: true, data: projectDtails, message: "Success"};
+  } catch (error: any) {
+    console.error(error);
+    throw error;
+  }
 }
 
-// export async function getProjectByIdService(
-//   projectId: string
-// ): Promise<Project | undefined> {
-//   return mockProjects.find((project) => project._id === projectId);
-// }
+export async function getProjectByIdService(
+  query: FilterQuery<ProjectDocument>
+) {
+  return ProjectModel.findOne(query);
+}
 
 // // export async function updateProjectService(update, options) {
 

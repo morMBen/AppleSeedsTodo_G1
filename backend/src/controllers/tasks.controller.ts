@@ -1,24 +1,21 @@
 import { Request, Response } from 'express';
 import { CreateTaskInput, UpdateTaskInput } from '../schema/task.schema';
 import { getProjectByIdService } from '../services/project.service'
-import {  } from '../services/task.service';
+import { createNewTaskService } from '../services/task.service';
 
-export async function createNewTaskHandler(
-  req: Request<CreateTaskInput['params']>,
-  res: Response
-) {  
+export async function createNewTaskHandler(req: Request, res: Response) {
   const { projectId } = req.params;
-  const newTask = req.body;
-  const project = await getProjectByIdService(projectId);
-  if (!project) {
-    res.status(404).send("Project not found");
-    return;
+  if (!projectId) {
+    return res.status(400).send("projectId is required as params");
   }
-  newTask._id = "abc4";
-  newTask.createdAt = new Date;
-  newTask.updatedAt = new Date;
-  project.tasks.push(newTask);
-  return res.send(newTask);
+
+  const { newTask } = req.body;
+  try {
+    const resObj = await createNewTaskService(projectId, newTask);
+    return res.status(200).send(resObj);
+  } catch (error: any) {
+    return res.status(500).send(error.message)
+  }
 }
 
 export async function getTasksByProjectHandler(
@@ -26,7 +23,7 @@ export async function getTasksByProjectHandler(
   res: Response
 ) {
   const { projectId } = req.params;
-  const project = await getProjectByIdService(projectId);
+  const project = await getProjectByIdService({ projectId });
   if (!project) {
     res.status(404).send("Project not found");
     return;
